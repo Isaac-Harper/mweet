@@ -5,6 +5,7 @@ export type Mweet = {
     name: string
     tag: string
     picture: string
+    user_id: string
 }
 
 export type Mweeter = {
@@ -15,5 +16,5 @@ export type Mweeter = {
     tag: string
     following: string[]
     picture: string
-    user_id: string
+    
 }
