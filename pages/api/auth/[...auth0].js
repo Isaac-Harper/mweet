@@ -4,7 +4,6 @@ import jwt from "jsonwebtoken";
 const afterCallback = async (req, res, session) => {
 	const payload = {
 		userId: session.user.sub,
-		returnTo: "/home"
 	};
 	
 
