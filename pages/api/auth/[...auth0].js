@@ -13,6 +13,12 @@ const afterCallback = async (req, res, session) => {
 };
 
 export default handleAuth({
+	async login(req, res) {
+    	await handleLogin(req, res, {
+      		returnTo: "/home",
+    	});
+  	},
+  
 	async callback(req, res) {
 		try {
 			await handleCallback(req, res, { afterCallback });
