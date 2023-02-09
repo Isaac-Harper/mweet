@@ -33,12 +33,17 @@ export const getServerSideProps: GetServerSideProps = withPageAuthRequired({
 		//set current mweeter
 		let mweeterData = typedMweeter.find((obj) => obj.user_id === user.sub);
 		if (!mweeterData) {
+			let tagString = user.nickname
+			while ( typedMweeter.includes((obj) => obj.tag === tagString) {
+				tagString = tagString + "x"
+			}	
+		
 			const { data } = await supabase
 				.from("mweeters")
 				.insert({
 					user_id: user.sub,
 					name: user.name,
-					tag: user.nickname,
+					tag: tagString,
 					picture: user.picture,
 					following: [],
 				})

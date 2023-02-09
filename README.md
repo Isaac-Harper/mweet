@@ -4,9 +4,11 @@ by Isaac Harper
 
 ## About
 
-This is a project using NextJS, typescript, Auth0, SASS, and Supabase to make a twitter clone
+This is a project using NextJS, typescript, Auth0, SASS, and Supabase to make a twitter clone. 
 
-After login in with Auth0 you can leave the landing page and go to the app home page where a user can create new Mweets, follow other users, and see the mweets either they or people they follow have posted
+The postgres database makes use of views and Row Level Security to let users see only what they are supposed to. 
+
+After login in with Auth0 you get redirected to the app home page where a user can create new Mweets, follow other users, and see the mweets either they or people they follow have posted
 
 In the following tab users will see only the mweets from people they follow. There is also a list of people they follow with the option to unfollow.
 
@@ -14,4 +16,4 @@ On the Profile tab users see their own profile with all of their mweets. If you 
 
 Click on your own tag in the sidebar/footer to open your settings where you can change your display name and tag.
 
-The app is responsive and adjusts to be usable on any screen size
+The app is responsive and adjusts to be usable on any screen size with the sidebar and followList adjusting their shape. 
