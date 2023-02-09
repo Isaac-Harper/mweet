@@ -1,6 +1,7 @@
 // [...slug].tsx
 //
 
+import Head from "next/head";
 import { getSession, withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
@@ -85,34 +86,41 @@ export default function User({
 
 	if (ownProfile) {
 		return (
-			<Dashboard userMweeter={mweeter}>
-				<div className={styles.outer}>
-					<h2>Update User </h2>
-					<form onSubmit={handleFormSubmit} className={styles.container}>
-						<div className={styles.row}>
-							<label htmlFor="name">name</label>
-							<input
-								type="text"
-								id="name"
-								placeholder={mweeter.name}
-								onChange={(input) => setName(input.target.value)}
-								value={name}
-							/>
-						</div>
-						<div className={styles.row}>
-							<label htmlFor="tag">tag</label>
-							<input
-								type="text"
-								id="tag"
-								placeholder={mweeter.tag}
-								onChange={(input) => setTag(input.target.value)}
-								value={tag}
-							/>
-						</div>
-						<button className={styles.updateButton}>update</button>
-					</form>
-				</div>
-			</Dashboard>
+			<>
+				<Head>
+		      	  	<title>Settings</title>
+			        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+	      			<meta name='description' content='Mweeter Settings'/>
+		      	</Head>
+				<Dashboard userMweeter={mweeter}>
+					<div className={styles.outer}>
+						<h2>Update User </h2>
+						<form onSubmit={handleFormSubmit} className={styles.container}>
+							<div className={styles.row}>
+								<label htmlFor="name">name</label>
+								<input
+									type="text"
+									id="name"
+									placeholder={mweeter.name}
+									onChange={(input) => setName(input.target.value)}
+									value={name}
+								/>
+							</div>
+							<div className={styles.row}>
+								<label htmlFor="tag">tag</label>
+								<input
+									type="text"
+									id="tag"
+									placeholder={mweeter.tag}
+									onChange={(input) => setTag(input.target.value)}
+									value={tag}
+								/>
+							</div>
+							<button className={styles.updateButton}>update</button>
+						</form>
+					</div>
+				</Dashboard>
+			</>
 		);
 	} else {
 		return <>cannot edit this user</>;

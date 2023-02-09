@@ -1,6 +1,7 @@
 // [tag].tsx
 //
 
+import Head from "next/head";
 import React, { useState } from "react";
 import Image from "next/image";
 
@@ -126,24 +127,31 @@ export default function User({
 	}
 
 	return (
-		<Dashboard userMweeter={mweeter}>
-			<div className={styles.container}>
-				<div className={styles.head}>
-					<Image
-						className={styles.picture}
-						src={mweeterCurrent.picture}
-						width={100}
-						height={100}
-						alt="profile"
-					/>
-					<h2>{mweeterCurrent.name}</h2>
-					<p>@{mweeterCurrent.tag}</p>
-					{button}
+		<>
+			<Head>
+	      	  	<title>User</title>
+		        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      			<meta name='description' content='Mweeter User'/>
+	      	</Head>
+			<Dashboard userMweeter={mweeter}>
+				<div className={styles.container}>
+					<div className={styles.head}>
+						<Image
+							className={styles.picture}
+							src={mweeterCurrent.picture}
+							width={100}
+							height={100}
+							alt="profile"
+						/>
+						<h2>{mweeterCurrent.name}</h2>
+						<p>@{mweeterCurrent.tag}</p>
+						{button}
+					</div>
+					<div className={styles.inner}>
+						<PostFeed allMweets={mweetsData} />
+					</div>{" "}
 				</div>
-				<div className={styles.inner}>
-					<PostFeed allMweets={mweetsData} />
-				</div>{" "}
-			</div>
-		</Dashboard>
+			</Dashboard>
+		</>
 	);
 }

@@ -1,3 +1,6 @@
+// following.tsx
+
+import Head from "next/head";
 import styles from "../styles/Following.module.sass";
 import React, { useEffect, useState } from "react";
 import Dashboard from "../components/dashboard";
@@ -123,19 +126,26 @@ export default function Following({
 	}, [allMweets, allMweeters]);
 
 	return (
-		<Dashboard userMweeter={mweeter}>
-			<div className={styles.outer}>
-				<h2 className={styles.heading}>Following Feed</h2>
-				<div className={styles.container}>
-					<PostFeed allMweets={followedMweets} />
-					<FollowList
-						mweeters={followedMweeters}
-						onClickFunction={unfollowUser}
-						buttonText="unfollow"
-						title="Following List"
-					/>
+		<>
+			<Head>
+	      	  	<title>Following</title>
+		        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      			<meta name='description' content='Mweeter Following'/>
+	      	</Head>
+			<Dashboard userMweeter={mweeter}>
+				<div className={styles.outer}>
+					<h2 className={styles.heading}>Following Feed</h2>
+					<div className={styles.container}>
+						<PostFeed allMweets={followedMweets} />
+						<FollowList
+							mweeters={followedMweeters}
+							onClickFunction={unfollowUser}
+							buttonText="unfollow"
+							title="Following List"
+						/>
+					</div>
 				</div>
-			</div>
-		</Dashboard>
+			</Dashboard>
+		</>
 	);
 }

@@ -1,3 +1,7 @@
+// home.tsx
+
+
+import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import Dashboard from "../components/dashboard";
 import PostFeed from "../components/postFeed";
@@ -180,6 +184,11 @@ export default function Home({
 
 	return (
 		<div>
+			<Head>
+	      	  	<title>Home</title>
+		        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      			<meta name='description' content='Mweeter Home'/>
+	      	</Head>
 			<Dashboard userMweeter={mweeter}>
 				<div className={styles.outer}>
 					<h2 className={styles.heading}>Your Feed</h2>
