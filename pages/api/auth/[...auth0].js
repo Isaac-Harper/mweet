@@ -4,7 +4,9 @@ import jwt from "jsonwebtoken";
 const afterCallback = async (req, res, session) => {
 	const payload = {
 		userId: session.user.sub,
+		returnTo: /home
 	};
+	
 
 	const token = jwt.sign(payload, process.env.SUPABASE_JWT_SECRET);
 	session.user.accessToken = token;
@@ -20,9 +22,4 @@ export default handleAuth({
 			res.status(error.status || 500).end(error.message);
 		}
 	},
-	async login(req, res) {
-    	await handleLogin(req, res, {
-      		returnTo: "/home",
-    	});
-  	},
 });
