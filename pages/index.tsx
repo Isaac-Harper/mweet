@@ -26,7 +26,10 @@ export default function Home() {
 	}
 	return (
 		<div className={styles.container}>
-			<h1 className={styles.title}>mweeter</h1>
+			<div className={styles.titleOuter}>
+				<h1 className={styles.title}>mweeter</h1>
+				<p>by Isaac Harper</p>
+			</div>
 			<a className={styles.button} href="/api/auth/login">
 				Login and Signup with Auth0
 			</a>
