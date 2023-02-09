@@ -34,7 +34,7 @@ export const getServerSideProps: GetServerSideProps = withPageAuthRequired({
 		let mweeterData = typedMweeter.find((obj) => obj.user_id === user.sub);
 		if (!mweeterData) {
 			let tagString = user.nickname
-			while ( typedMweeter.includes((obj) => obj.tag === tagString) {
+			while ( typedMweeter.find((obj) => obj.tag === tagString) {
 				tagString = tagString + "x"
 			}	
 		
