@@ -87,7 +87,7 @@ export default function User({
 	const [mweeter, setMweeter] = useState(myMweeter);
 	const [mweeterCurrent, setMweeterCurrent] = useState(currentMweeter);
 	const [followText, setFollowText] = useState(
-		mweeter.following.includes(mweeterCurrent.tag) ? "unfollow" : "follow"
+		mweeter.following.includes(mweeterCurrent.user_id) ? "unfollow" : "follow"
 	);
 	const supabase = getSupabase(user.accessToken);
 
