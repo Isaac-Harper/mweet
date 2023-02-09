@@ -1,0 +1,65 @@
+// base.module.sass -> pages/index.tsx
+
+.container
+    height: 100dvh
+    display: grid
+    grid-template-rows: 1fr auto 2fr auto 2fr
+    grid-template-columns: 1fr 1fr auto auto 1fr 1fr
+
+.title
+    grid-area: 2 / 3 / 3 / 5
+
+    font-size: 4rem
+    background: linear-gradient(to right, darkblue, hsl(250, 40, 60))
+    color: transparent
+    background-clip: text
+
+.button
+    grid-area: 4 / 2 / 5 / 6
+    background: hsl(250, 40, 60)
+    padding: 2rem 0
+    border-radius: 1rem
+    text-decoration: none
+    color: white
+    font-weight: bold
+    font-size: 1.2rem
+    text-align: center
+    border: hsl(250, 40, 70) solid 5px
+
+.button:hover
+    background: hsl(250, 40, 50)
+    border: hsl(250, 40, 65) solid 5px
+
+.logoutButton
+    grid-area: 4 / 2 / 5 /4
+    margin-right: 1rem
+    background: hsl(0, 40, 60)
+    padding: 2rem 0
+    border-radius: 1rem
+    text-decoration: none
+    color: white
+    font-weight: bold
+    font-size: 1.2rem
+    text-align: center
+    border: hsl(0, 40, 70) solid 5px
+
+.logoutButton:hover
+    background: hsl(0, 40, 50)
+    border: hsl(0, 40, 65) solid 5px
+
+.homeButton
+    grid-area: 4 / 4 / 5 / 6
+    margin-left: 1rem
+    background: hsl(250, 40, 60)
+    padding: 2rem 0
+    border-radius: 1rem
+    text-decoration: none
+    color: white
+    font-weight: bold
+    font-size: 1.2rem
+    text-align: center
+    border: hsl(250, 40, 70) solid 5px
+
+.homeButton:hover
+    background: hsl(250, 40, 50)
+    border: hsl(250, 40, 65) solid 5px

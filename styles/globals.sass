@@ -1,0 +1,35 @@
+// global.sass -> pages/_app.tsx
+
+// some resets I like
+*,
+*::before,
+*::after
+  box-sizing: border-box
+
+/* Remove default margin */
+*
+  margin: 0
+  overflow-wrap: break-word
+  font-family: Arial, Helvetica, sans-serif
+
+html:focus-within
+  scroll-behavior: smooth
+
+body
+  min-height: 100dvh
+  text-rendering: optimizeSpeed
+  line-height: 1.5
+
+img,
+picture,
+video,
+canvas,
+svg
+  max-width: 100%
+  display: block
+
+input,
+button,
+textarea,
+select
+  font: inherit

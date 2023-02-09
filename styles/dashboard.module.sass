@@ -1,0 +1,16 @@
+// dashboard.module.sass -> components/dashboard.tsx
+
+.container
+    height: 100dvh
+    display: grid
+    width: 100%
+    grid-template-columns: auto 1fr
+    grid-template-rows: 1fr auto
+    @media (max-width: 768px)
+        min-height: 100dvh
+
+.inner
+    grid-area: 1 /2 / 3 / 3
+    @media (max-width: 768px)
+        grid-area: 1 / 1 / 2 / 3
+        overflow-y: auto
