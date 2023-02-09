@@ -73,7 +73,10 @@ export default function User({
 			.eq("user_id", user.sub)
 			.select("*")
 			.single();
-		if (error) console.log(error.message);
+		if (error) {
+			console.log(error.message);
+			alert("that name is unavailable");
+		}	
 		if (data) {
 			const mweeterData: Mweeter = data;
 			setMweeter(mweeterData);
