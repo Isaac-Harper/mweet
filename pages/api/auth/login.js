@@ -6,4 +6,4 @@ export default handleAuth({
       returnTo: "/home",
     });
   },
-});}
+});
