@@ -32,7 +32,7 @@ export default function FollowTag({
 				</div>
 			</Link>
 			<button
-				onClick={() => onClickFunction(mweeter.tag)}
+				onClick={() => onClickFunction(mweeter.user_id)}
 				className={styles.button}
 			>
 				{buttonText}

@@ -93,7 +93,7 @@ export default function User({
 
 	async function handleClick() {
 		let temp = mweeter;
-		if (mweeter.following.includes(mweeterCurrent.tag)) {
+		if (mweeter.following.includes(mweeterCurrent.user_id)) {
 			temp.following = temp.following.filter(
 				(obj) => obj !== mweeterCurrent.user_id
 			);
