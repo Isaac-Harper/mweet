@@ -15,4 +15,5 @@ export type Mweeter = {
     tag: string
     following: string[]
     picture: string
+    user_id: string
 }

@@ -77,14 +77,14 @@ export default function Following({
 	// mweeters user follows
 	const [followedMweeters, setFollowedMweeters] = useState(
 		mweetersList.filter((obj) => {
-			return mweeter.following.includes(obj.tag);
+			return mweeter.following.includes(obj.user_id);
 		})
 	);
 
 	// mweets user follows
 	const [followedMweets, setFollowedMweets] = useState(
 		allMweets.filter((obj) => {
-			return mweeter.following.includes(obj.tag);
+			return mweeter.following.includes(obj.user_id);
 		})
 	);
 
@@ -92,20 +92,20 @@ export default function Following({
 	async function setLists() {
 		setFollowedMweeters(
 			allMweeters.filter((obj) => {
-				return mweeter.following.includes(obj.tag);
+				return mweeter.following.includes(obj.user_id);
 			})
 		);
 
 		setFollowedMweets(
 			allMweets.filter((obj) => {
-				return mweeter.following.includes(obj.tag);
+				return mweeter.following.includes(obj.user_id);
 			})
 		);
 	}
 
-	async function unfollowUser(tag: string) {
+	async function unfollowUser(user_id: string) {
 		let temp = mweeter;
-		temp.following = temp.following.filter((obj) => obj !== tag);
+		temp.following = temp.following.filter((obj) => obj !== user_id);
 		setMweeter(temp);
 
 		const { error } = await supabase

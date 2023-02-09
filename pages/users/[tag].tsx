@@ -95,11 +95,11 @@ export default function User({
 		let temp = mweeter;
 		if (mweeter.following.includes(mweeterCurrent.tag)) {
 			temp.following = temp.following.filter(
-				(obj) => obj !== mweeterCurrent.tag
+				(obj) => obj !== mweeterCurrent.user_id
 			);
 			setFollowText("follow");
 		} else {
-			temp.following = [...mweeter.following, mweeterCurrent.tag];
+			temp.following = [...mweeter.following, mweeterCurrent.user_id];
 			setFollowText("unfollow");
 		}
 
