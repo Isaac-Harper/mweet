@@ -118,11 +118,15 @@ export default function User({
 
 	let button = <></>;
 	if (!ownProfile) {
-		button = <button onClick={handleClick}>{followText}</button>;
+		button = (
+			<button className={styles.followButton} onClick={handleClick}>
+				{followText}
+			</button>
+		);
 	}
 
 	return (
-		<Dashboard userMweeter={mweeterCurrent}>
+		<Dashboard userMweeter={mweeter}>
 			<div className={styles.container}>
 				<div className={styles.head}>
 					<Image

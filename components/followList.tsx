@@ -18,6 +18,12 @@ export default function FollowList({
 	title: string;
 }) {
 	const [shown, setShown] = useState(true);
+	const [arrow, setArrow] = useState("▲");
+
+	function update() {
+		setShown(!shown);
+		arrow === "▲" ? setArrow("▼") : setArrow("▲");
+	}
 
 	let toggleText;
 	if (shown) {
@@ -44,8 +50,8 @@ export default function FollowList({
 		<div className={styles.container}>
 			<div className={styles.header}>
 				<h3>{title}</h3>
-				<button className={styles.toggle} onClick={() => setShown(!shown)}>
-					▲
+				<button className={styles.toggle} onClick={update}>
+					{arrow}
 				</button>
 			</div>
 			{toggleText}

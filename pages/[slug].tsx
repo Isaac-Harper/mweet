@@ -109,7 +109,7 @@ export default function User({
 								value={tag}
 							/>
 						</div>
-						<button>update</button>
+						<button className={styles.updateButton}>update</button>
 					</form>
 				</div>
 			</Dashboard>
