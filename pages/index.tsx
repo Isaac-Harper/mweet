@@ -11,7 +11,10 @@ export default function Home() {
 	if (user) {
 		return (
 			<div className={styles.container}>
-				<h1 className={styles.title}>mweeter</h1>
+				<div className={styles.titleOuter}>
+					<h1 className={styles.title}>mweeter</h1>
+					<p>by Isaac Harper</p>
+				</div>
 				<a className={styles.logoutButton} href="/api/auth/logout">
 					Logout
 				</a>
