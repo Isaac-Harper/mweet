@@ -86,21 +86,20 @@ export default function User({
 	mweetsData: Mweet[];
 }) {
 	const [mweeter, setMweeter] = useState(myMweeter);
-	const [mweeterCurrent, setMweeterCurrent] = useState(currentMweeter);
 	const [followText, setFollowText] = useState(
-		mweeter.following.includes(mweeterCurrent.user_id) ? "unfollow" : "follow"
+		mweeter.following.includes(currentMweeter.user_id) ? "unfollow" : "follow"
 	);
 	const supabase = getSupabase(user.accessToken);
 
 	async function handleClick() {
 		let temp = mweeter;
-		if (mweeter.following.includes(mweeterCurrent.user_id)) {
+		if (mweeter.following.includes(currentMweeter.user_id)) {
 			temp.following = temp.following.filter(
-				(obj) => obj !== mweeterCurrent.user_id
+				(obj) => obj !== currentMweeter.user_id
 			);
 			setFollowText("follow");
 		} else {
-			temp.following = [...mweeter.following, mweeterCurrent.user_id];
+			temp.following = [...mweeter.following, currentMweeter.user_id];
 			setFollowText("unfollow");
 		}
 
@@ -138,13 +137,13 @@ export default function User({
 					<div className={styles.head}>
 						<Image
 							className={styles.picture}
-							src={mweeterCurrent.picture}
+							src={currentMweeter.picture}
 							width={100}
 							height={100}
 							alt="profile"
 						/>
-						<h2>{mweeterCurrent.name}</h2>
-						<p>@{mweeterCurrent.tag}</p>
+						<h2>{currentMweeter.name}</h2>
+						<p>@{currentMweeter.tag}</p>
 						{button}
 					</div>
 					<div className={styles.inner}>

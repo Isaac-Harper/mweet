@@ -35,6 +35,7 @@ export const getServerSideProps: GetServerSideProps = withPageAuthRequired({
 		// set current mweeter
 		let mweeterData = typedMweeter.find((obj) => obj.user_id === user.sub);
 		if (!mweeterData) {
+			// adds x to tags if they are the same
 			let tagString = user.nickname
 			while ( typedMweeter.find((obj) => obj.tag === tagString) ) {
 				tagString = tagString + "x"
