@@ -76,7 +76,7 @@ export default function User({
 		if (error) {
 			console.log(error.message);
 			alert("that name is unavailable");
-		}	
+		}
 		if (data) {
 			const mweeterData: Mweeter = data;
 			setMweeter(mweeterData);
@@ -91,10 +91,13 @@ export default function User({
 		return (
 			<>
 				<Head>
-		      	  	<title>Settings</title>
-			        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-	      			<meta name='description' content='Mweeter Settings'/>
-		      	</Head>
+					<title>Settings</title>
+					<meta
+						name="viewport"
+						content="initial-scale=1.0, width=device-width"
+					/>
+					<meta name="description" content="Mweeter Settings" />
+				</Head>
 				<Dashboard userMweeter={mweeter}>
 					<div className={styles.outer}>
 						<h2>Update User </h2>

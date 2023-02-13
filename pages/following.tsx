@@ -34,11 +34,11 @@ export const getServerSideProps: GetServerSideProps = withPageAuthRequired({
 		let mweeterData = typedMweeter.find((obj) => obj.user_id === user.sub);
 		if (!mweeterData) {
 			// adds x to tags if they are the same
-			let tagString = user.nickname
-			while ( typedMweeter.find((obj) => obj.tag === tagString)) {
-				tagString = tagString + "x"
-			}	
-		
+			let tagString = user.nickname;
+			while (typedMweeter.find((obj) => obj.tag === tagString)) {
+				tagString = tagString + "x";
+			}
+
 			const { data } = await supabase
 				.from("mweeters")
 				.insert({
@@ -134,10 +134,10 @@ export default function Following({
 	return (
 		<>
 			<Head>
-	      	  	<title>Following</title>
-		        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      			<meta name='description' content='Mweeter Following'/>
-	      	</Head>
+				<title>Following</title>
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+				<meta name="description" content="Mweeter Following" />
+			</Head>
 			<Dashboard userMweeter={mweeter}>
 				<div className={styles.outer}>
 					<h2 className={styles.heading}>Following Feed</h2>

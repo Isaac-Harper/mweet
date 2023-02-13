@@ -1,5 +1,6 @@
 import { handleAuth, handleCallback, handleLogin } from "@auth0/nextjs-auth0";
 import jwt from "jsonwebtoken";
+import { useRouter } from "next/router";
 
 const afterCallback = async (req, res, session) => {
 	const payload = {
@@ -18,6 +19,7 @@ export default handleAuth({
 			await handleCallback(req, res, { afterCallback });
 		} catch (error) {
 			res.status(error.status || 500).end(error.message);
+			window.location.href = "/";
 		}
 	},
 

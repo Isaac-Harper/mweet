@@ -128,10 +128,10 @@ export default function User({
 	return (
 		<>
 			<Head>
-	      	  	<title>User</title>
-		        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      			<meta name='description' content='Mweeter User'/>
-	      	</Head>
+				<title>User</title>
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+				<meta name="description" content="Mweeter User" />
+			</Head>
 			<Dashboard userMweeter={mweeter}>
 				<div className={styles.container}>
 					<div className={styles.head}>
