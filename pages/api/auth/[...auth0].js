@@ -5,7 +5,6 @@ const afterCallback = async (req, res, session) => {
 	const payload = {
 		userId: session.user.sub,
 	};
-	
 
 	const token = jwt.sign(payload, process.env.SUPABASE_JWT_SECRET);
 	session.user.accessToken = token;
@@ -16,15 +15,15 @@ const afterCallback = async (req, res, session) => {
 export default handleAuth({
 	async callback(req, res) {
 		try {
-			await handleCallback	(req, res, { afterCallback });
+			await handleCallback(req, res, { afterCallback });
 		} catch (error) {
 			res.status(error.status || 500).end(error.message);
 		}
 	},
-	
+
 	async login(req, res) {
-	    await handleLogin(req, res, {
-	      		returnTo: "/home",
-	    });
-  	},
+		await handleLogin(req, res, {
+			returnTo: "/home",
+		});
+	},
 });
