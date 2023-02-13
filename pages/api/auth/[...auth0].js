@@ -19,13 +19,16 @@ export default handleAuth({
 			await handleCallback(req, res, { afterCallback });
 		} catch (error) {
 			res.status(error.status || 500).end(error.message);
-			window.location.href = "/";
 		}
 	},
 
 	async login(req, res) {
-		await handleLogin(req, res, {
-			returnTo: "/home",
-		});
+		try {
+			await handleLogin(req, res, {
+				returnTo: "/home",
+			});
+		} catch (error) {
+			res.status(error.status || 500).end(error.message);
+		}
 	},
 });
