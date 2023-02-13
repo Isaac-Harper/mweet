@@ -18,6 +18,7 @@ export default handleAuth({
 		try {
 			await handleCallback(req, res, { afterCallback });
 		} catch (error) {
+			console.log(error.message);
 			res.status(error.status || 500).end(error.message);
 		}
 	},
@@ -28,6 +29,7 @@ export default handleAuth({
 				returnTo: "/home",
 			});
 		} catch (error) {
+			console.log(error.message);
 			res.status(error.status || 500).end(error.message);
 		}
 	},
